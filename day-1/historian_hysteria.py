@@ -12,9 +12,9 @@ def parse_numbers(filename: str) -> tuple:
         right_numbers.sort()
     return left_numbers, right_numbers
 
-def get_difference(left_numbers: list[str], right_numbers: list[str]) -> list[str]:
+def get_difference(left_numbers: list[int], right_numbers: list[int]) -> list[int]:
     """minuses a left number and a right number in the same index and appends the difference in a list"""
-    return [left - right for left, right in zip(left_numbers, right_numbers)]
+    return [abs(left - right) for left, right in zip(left_numbers, right_numbers)]
 
 
 if __name__ == "__main__":
