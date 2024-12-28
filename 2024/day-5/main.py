@@ -22,6 +22,9 @@ def parse_data(input_data, instructions):
         
         if check_line(line, instructions):
             line.append(good_data)
+        else:
+            total =+ middle(line)
+    print(total)
 
 def check_line(line, instructions):
     for instruction in instructions:
@@ -30,6 +33,20 @@ def check_line(line, instructions):
             if line.index(rule1) > line.index(rule2):
                 return False
             return True
+
+def middle(line):
+    """
+    Orders the line and returns the middle of the list.
+    """
+    # Sort the list
+    sorted_line = sorted(line)
+    
+    # Find the middle index
+    n = len(sorted_line)
+    if n % 2 == 1:  # Odd length
+        return sorted_line[n // 2]
+    else:
+        raise ValueError
     
             
 
