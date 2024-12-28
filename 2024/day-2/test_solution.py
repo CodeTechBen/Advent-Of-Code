@@ -1,5 +1,5 @@
 import pytest
-from red_nosed_report import safe_line
+from red_nosed_report import is_safe
 
 
 @pytest.mark.parametrize(
