@@ -66,4 +66,4 @@ if __name__ == "__main__":
     deck_1 = [9, 2, 6, 3, 1]
     deck_2 = [5, 8, 4, 7, 10]
     solution = play_crab_combat(deck_1, deck_2)
-    print("First *:  ", solution)
+    print("First *:", solution)
