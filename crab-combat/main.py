@@ -114,6 +114,7 @@ if __name__ == "__main__":
     # deck_2 = [5, 8, 4, 7, 10]
     # solution = play_crab_combat(deck_1, deck_2)
     # print("First *:", solution)
+    deck_1, deck_2 = read_player_data('players_numbers_random.txt')
     winner = play_recursive_crab_combat(deck_1, deck_2)
     print(winner[0])
     print(result(winner[1]))
