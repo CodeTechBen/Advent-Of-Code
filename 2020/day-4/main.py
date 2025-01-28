@@ -4,8 +4,7 @@ import re
 def get_text(filepath: str) -> list[str]:
     """Gets the filepath of the input and returns it as a list of strings, each string represents a different passport."""
     with open(filepath) as f:
-        entries = f.read().split("\n\n")
-        return [entry.replace("\n", " ") for entry in entries]
+        return f.read().split("\n\n")
 
 
 def is_valid_passport(passport: str) -> bool:
@@ -16,14 +15,15 @@ def is_valid_passport(passport: str) -> bool:
     required_fields = {'byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid'}
 
     fields = re.findall(r'(\w{3}):', passport)
-    return required_fields.issubset(fields)
+    if required_fields.issubset(fields):
+        return True
 
 
 def solution_1(passports: list[str]) -> int:
     """
     Counts the number of valid passports in the input list.
     """
-    return sum(is_valid_passport(passport) for passport in passports)
+    return len([passport for passport in passports if is_valid_passport(passport)])
 
 
 if __name__ == "__main__":
